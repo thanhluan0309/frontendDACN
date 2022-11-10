@@ -1,0 +1,68 @@
+.cssfor-carousel{
+    padding: 33px 148px;
+}
+.managePost{
+    width: 100%;
+    max-height: 700px;
+
+}
+.managePost-body {
+    display: flex;
+    width: 100%;
+    max-height: 200px;
+    
+    
+}
+.body-Listitem {
+  
+    background-image: url("https://64.media.tumblr.com/587156531ea4a91473adeadbc6af0e13/b865992b21c858ce-23/s640x960/85438340b94ece05f9ef87e75e77bdff7382fa87.gif");
+    background-size: cover;
+    padding: 10px;
+    width: 100%;
+    height: 550px;
+    min-height: 235px;
+   
+    overflow-x: auto;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-style: ridge;
+    margin-top: 1%;
+}
+.body-item{
+    /* background-color: orange; */
+    width: 309px;
+    height: 176px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 5px 13px 3px;
+}
+.cssforItem-content{
+    margin-left: 7%;
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+.cssforImageMap {
+    border: saddlebrown solid;
+    border-radius: 20px;
+}
+.layout {
+    width: 100%;
+    background-color: #dfe0e4;
+    border-radius: 10px;
+}
+.CssforItem_layout{
+    background-color: aqua;
+    border: salmon solid;
+    width: 100%;
+    text-align: center;
+}
+
+.cssforColumn { 
+   
+ 
+}
+.cssforTaskContent {
+    
+}

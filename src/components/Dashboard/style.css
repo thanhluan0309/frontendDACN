@@ -1,0 +1,99 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  .FormUserAccess-list-iteam{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .FormUserAccess-list{
+    background-color: #d8e5f1;
+    max-height: 203px;
+    overflow-y: scroll;
+    border-radius: 5px;
+  }
+  
+  .FormUserRequestAccess-list-iteam{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .FormUserRequestAccess-list{
+    background-color: #edaa58;
+    max-height: 203px;
+    overflow-y: scroll;
+    border-radius: 5px;
+  }
+  
+  .RowNoteColor{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 14px;
+    width: 50%;
+    align-items: center;
+  }
+  .RowNote-left{
+   
+    background-color: aliceblue;
+    height: 41px;
+    align-items: center;
+    width: 70%;
+    border-radius: 5px;
+    padding: 0px 9px;
+    max-height: 41px;
+    flex-wrap: wrap;
+    display: flex;
+    overflow-x: auto;
+    word-break: break-all;
+  }
+  .RowNote-right {
+    background-color: #bed6eb;
+    border-radius: 8px;
+  }
+  .RowNoteColor-body {
+    margin-right: 38px;
+    width: 146px;
+  }
+ .form-item{
+  padding: 4px;
+ }
+ .cssforDashboard{
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(#8B939A, #5B6467);
+ }
