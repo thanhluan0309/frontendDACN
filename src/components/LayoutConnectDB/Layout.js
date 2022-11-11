@@ -248,7 +248,13 @@ const LayoutDNDConnectDB = () => {
   };
   return (
     <>
-      <div className="cssforlayout" style={{ width: "100%", height: "100%", position: "fixed" }}>
+      <div
+        className="cssforlayout"
+        style={{
+          width: "100%",
+          height: "851px",
+        }}
+      >
         <div className="row">
           <div className="col-12">
             <nav

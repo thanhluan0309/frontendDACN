@@ -144,162 +144,155 @@ export const Dashboard = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div style={{ position: "fixed", zIndex: "200" }}>
+      <div
+        style={{ backgroundColor: "black", position: "fixed", zIndex: "200" }}
+      >
         <NotificationContainer></NotificationContainer>
       </div>
 
       <div
-        style={{
-          width: "100%",
-          height: "100%",
-          padding: "4px",
-          zIndex: "200",
-          position: "fixed",
-          
-        }}
         className="cssforDashboard"
+        style={{ display: "flex", padding: "20px", height: "783px" }}
       >
-        <div style={{ display: "flex", marginTop: "30px" }}>
-          <div className="managePost">
-            <span style={{ marginLeft: "12px" }} className="managePost-title">
-              <Button
-                type="button"
-                className="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop"
-              >
-                Add post
-              </Button>
-              <Button
-                type="button"
-                className="btn btn-primary"
-                style={{ marginLeft: "20px" }}
-                onClick={gobackHomepage}
-              >
-                Back
-              </Button>
+        <div className="managePost">
+          <span style={{ marginLeft: "12px" }} className="managePost-title">
+            <Button
+              type="button"
+              className="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Add post
+            </Button>
+            <Button
+              type="button"
+              className="btn btn-primary"
+              style={{ marginLeft: "20px" }}
+              onClick={gobackHomepage}
+            >
+              Back
+            </Button>
 
-              <a style={{ width: "100%", marginLeft: "20px" }} href="/layoutdb">
-                <Button>Go to work-space</Button>
-              </a>
+            <a style={{ width: "100%", marginLeft: "20px" }} href="/layoutdb">
+              <Button>Go to work-space</Button>
+            </a>
 
-              <div className="RowNoteColor">
-                <div className="RowNote-left">
-                  {Map &&
-                    Map.map((item, index) => (
-                      <div className="RowNoteColor-body">
-                        {Map[index].NameColor} -{" "}
-                        <span
-                          style={{
-                            backgroundColor: `${Map[index].color}`,
-                            width: "20px",
-                            height: "20px",
-                            borderRadius: "40px",
-                            padding: "5px",
-                          }}
-                        >
-                          {`${Map[index].color}`}
-                        </span>
-                      </div>
-                    ))}
-                </div>
-                <div className="RowNote-right border shadow">
-                  <div className="form">
-                    <div className="form-item">
-                      <input
-                        type="text input"
-                        placeholder="Content color"
-                        name="NameColor"
-                        value={formupdatecolor.NameColor}
-                        onChange={onhandlechangecolor}
-                      ></input>
-                    </div>
-                    <div className="form-item">
-                      <label>Choose your color</label>
-                      <input
-                        type="color"
-                        name="color"
-                        onChange={onhandlechangecolor}
-                      ></input>
-                    </div>
-                    <div className="form-item">
-                      <Button
-                        value={localStorage.getItem("mapid")}
-                        onClick={Submitcolor}
+            <div className="RowNoteColor">
+              <div className="RowNote-left">
+                {Map &&
+                  Map.map((item, index) => (
+                    <div className="RowNoteColor-body">
+                      {Map[index].NameColor} -{" "}
+                      <span
+                        style={{
+                          backgroundColor: `${Map[index].color}`,
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "40px",
+                          padding: "5px",
+                        }}
                       >
-                        Submit
-                      </Button>
+                        {`${Map[index].color}`}
+                      </span>
                     </div>
+                  ))}
+              </div>
+              <div className="RowNote-right border shadow">
+                <div className="form">
+                  <div className="form-item">
+                    <input
+                      type="text input"
+                      placeholder="Content color"
+                      name="NameColor"
+                      value={formupdatecolor.NameColor}
+                      onChange={onhandlechangecolor}
+                    ></input>
+                  </div>
+                  <div className="form-item">
+                    <label>Choose your color</label>
+                    <input
+                      type="color"
+                      name="color"
+                      onChange={onhandlechangecolor}
+                    ></input>
+                  </div>
+                  <div className="form-item">
+                    <Button
+                      value={localStorage.getItem("mapid")}
+                      onClick={Submitcolor}
+                    >
+                      Submit
+                    </Button>
                   </div>
                 </div>
               </div>
-            </span>
-            <ModalAddpost
-              onchangeCreate={onchangeCreate}
-              createPost={createPost}
-              onSubmitCreate={onSubmitCreate}
-            ></ModalAddpost>
-            <form>
-              <div className="managePost-body">
-                <ul className="body-Listitem">
-                  {Post &&
-                    Post.map(({ title, _id, Url, Des, user, color }) => (
-                      <li
-                        key={_id}
-                        id={_id}
-                        name="id"
-                        style={{ backgroundColor: `${color}` }}
-                        className="body-item"
+            </div>
+          </span>
+          <ModalAddpost
+            onchangeCreate={onchangeCreate}
+            createPost={createPost}
+            onSubmitCreate={onSubmitCreate}
+          ></ModalAddpost>
+          <form>
+            <div className="managePost-body">
+              <ul className="body-Listitem">
+                {Post &&
+                  Post.map(({ title, _id, Url, Des, user, color }) => (
+                    <li
+                      key={_id}
+                      id={_id}
+                      name="id"
+                      style={{ backgroundColor: `${color}` }}
+                      className="body-item"
+                    >
+                      <Button onClick={RemovePost} value={_id}>
+                        X
+                      </Button>
+                      <Button
+                        type="button"
+                        className="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop2"
+                        onClick={onclickGetonePost}
+                        value={_id}
                       >
-                        <Button onClick={RemovePost} value={_id}>
-                          X
-                        </Button>
-                        <Button
-                          type="button"
-                          className="btn btn-primary"
-                          data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop2"
-                          onClick={onclickGetonePost}
-                          value={_id}
-                        >
-                          Edit
-                        </Button>
-                        <Button
-                          onClick={() => {
-                            window.open(Url);
-                          }}
-                        >
-                          🔗
-                        </Button>
-                        <ModalEdit
-                          id={_id}
-                          color={color}
-                          onchangeEdit={onchangeEdit}
-                          onSubmitEdit={onSubmitEdit}
-                          getPostEdit={getPostEdit}
-                        ></ModalEdit>
+                        Edit
+                      </Button>
+                      <Button
+                        onClick={() => {
+                          window.open(Url);
+                        }}
+                      >
+                        🔗
+                      </Button>
+                      <ModalEdit
+                        id={_id}
+                        color={color}
+                        onchangeEdit={onchangeEdit}
+                        onSubmitEdit={onSubmitEdit}
+                        getPostEdit={getPostEdit}
+                      ></ModalEdit>
 
-                        <p className="cssforItem-content">
-                          <b>Title: {title}</b>
-                        </p>
-                        <p className="cssforItem-content">
-                          URL:
-                          {Url && Url.length > 20
-                            ? `${Url.substr(0, 20)}...`
-                            : `${Url}`}
-                        </p>
-                        <p className="cssforItem-content">
-                          DES:
-                          {Des && Des.length > 20
-                            ? `${Des.substr(0, 19)}...`
-                            : `${Des}`}
-                        </p>
-                      </li>
-                    ))}
-                </ul>
-              </div>
-            </form>
-          </div>
+                      <p className="cssforItem-content">
+                        <b>Title: {title}</b>
+                      </p>
+                      <p className="cssforItem-content">
+                        URL:
+                        {Url && Url.length > 20
+                          ? `${Url.substr(0, 20)}...`
+                          : `${Url}`}
+                      </p>
+                      <p className="cssforItem-content">
+                        DES:
+                        {Des && Des.length > 20
+                          ? `${Des.substr(0, 19)}...`
+                          : `${Des}`}
+                      </p>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </form>
         </div>
       </div>
     </>
